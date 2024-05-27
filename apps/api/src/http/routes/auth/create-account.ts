@@ -10,6 +10,8 @@ export async function createAccount(app: FastifyInstance) {
     '/users',
     {
       schema: {
+        tags: ['Auth'],
+        summary: 'Create a new account',
         body: z.object({
           name: z.string().min(3).max(255),
           email: z.string().email(),
@@ -41,6 +43,6 @@ export async function createAccount(app: FastifyInstance) {
       })
 
       return reply.status(201).send()
-    },
+    }
   )
 }
