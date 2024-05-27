@@ -9,6 +9,9 @@
   "devDependencies": {
     "turbo": "latest"
   },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "packageManager": "pnpm@8.9.0",
   "engines": {
     "node": ">=18"
