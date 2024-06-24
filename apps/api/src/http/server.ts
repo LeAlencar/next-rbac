@@ -11,6 +11,9 @@ import {
   ZodTypeProvider,
 } from 'fastify-type-provider-zod'
 
+import { removeMember } from '@/http/routes/members/remove-member'
+import { updateMember } from '@/http/routes/members/update-member'
+
 import { errorHandler } from './error-handler'
 import { authenticvateWithGithub } from './routes/auth/authenticate-with-github'
 import { authenticateWithPassword } from './routes/auth/authenticate-with-password'
@@ -86,6 +89,8 @@ app.register(getProject)
 app.register(getProjects)
 app.register(updateProject)
 app.register(getMembers)
+app.register(updateMember)
+app.register(removeMember)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('Server is running on port 3333')
